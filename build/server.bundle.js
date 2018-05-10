@@ -101,7 +101,19 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(__dirname) {\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _bodyParser = __webpack_require__(/*! body-parser */ \"body-parser\");\n\nvar _bodyParser2 = _interopRequireDefault(_bodyParser);\n\nvar _cookieParser = __webpack_require__(/*! cookie-parser */ \"cookie-parser\");\n\nvar _cookieParser2 = _interopRequireDefault(_cookieParser);\n\nvar _morgan = __webpack_require__(/*! morgan */ \"morgan\");\n\nvar _morgan2 = _interopRequireDefault(_morgan);\n\nvar _path = __webpack_require__(/*! path */ \"./node_modules/path-browserify/index.js\");\n\nvar _path2 = _interopRequireDefault(_path);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\n\napp.use(_express2.default.static(_path2.default.resolve(__dirname, '../../build/public')));\napp.use(_bodyParser2.default.json());\napp.use(_bodyParser2.default.urlencoded({ extended: false }));\napp.use((0, _morgan2.default)('dev'));\n\napp.use('/', function (req, res) {\n    res.status(200).send('Hello');\n});\n\napp.listen(\"3000\", function (err) {\n    if (!err) {\n        console.log('App is running on port ' + \"3000\");\n    }\n});\n/* WEBPACK VAR INJECTION */}.call(this, \"src/server\"))\n\n//# sourceURL=webpack:///./src/server/index.js?");
+eval("/* WEBPACK VAR INJECTION */(function(__dirname) {\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _bodyParser = __webpack_require__(/*! body-parser */ \"body-parser\");\n\nvar _bodyParser2 = _interopRequireDefault(_bodyParser);\n\nvar _cookieParser = __webpack_require__(/*! cookie-parser */ \"cookie-parser\");\n\nvar _cookieParser2 = _interopRequireDefault(_cookieParser);\n\nvar _morgan = __webpack_require__(/*! morgan */ \"morgan\");\n\nvar _morgan2 = _interopRequireDefault(_morgan);\n\nvar _path = __webpack_require__(/*! path */ \"./node_modules/path-browserify/index.js\");\n\nvar _path2 = _interopRequireDefault(_path);\n\nvar _routes = __webpack_require__(/*! ./routes */ \"./src/server/routes/index.js\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\n\napp.use(_express2.default.static(_path2.default.resolve(__dirname, '../../build/public')));\napp.use(_bodyParser2.default.json());\napp.use(_bodyParser2.default.urlencoded({ extended: false }));\napp.use((0, _morgan2.default)('dev'));\n\napp.use(_routes2.default);\n\napp.listen(\"3000\", function (err) {\n    if (!err) {\n        console.log('App is running on port ' + \"3000\");\n    }\n});\n/* WEBPACK VAR INJECTION */}.call(this, \"src/server\"))\n\n//# sourceURL=webpack:///./src/server/index.js?");
+
+/***/ }),
+
+/***/ "./src/server/routes/index.js":
+/*!************************************!*\
+  !*** ./src/server/routes/index.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar router = (0, _express.Router)();\n\nrouter.get('/', function (req, res) {\n    res.status(200).send('Hello!');\n});\n\nexports.default = router;\n\n//# sourceURL=webpack:///./src/server/routes/index.js?");
 
 /***/ }),
 
